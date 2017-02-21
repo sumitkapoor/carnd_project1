@@ -168,24 +168,24 @@ The results of the project are stored in "final" folder. The folder includes the
 * extra.mp4	
 * white.mp4
 * yellow.mp4
-* solidWhiteRight	
-[@ solidWhiteRight_hough.jpg | left | img10]: ../final/solidWhiteRight_hough.jpg
-[@ solidWhiteRight_final.jpg | right | img11]: ../final/solidWhiteRight_final.jpg
+* solidWhiteRight
+[@ solidWhiteRight_hough.jpg | left | img10]: ./final/solidWhiteRight_hough.jpg
+[@ solidWhiteRight_final.jpg | right | img11]: ./final/solidWhiteRight_final.jpg
 * whiteCarLaneSwitch
-[@ whiteCarLaneSwitch_hough.jpg | left | img12]: ../final/whiteCarLaneSwitch_hough.jpg
-[@ whiteCarLaneSwitch_final.jpg | right | img13]: ../final/whiteCarLaneSwitch_final.jpg
+[@ whiteCarLaneSwitch_hough.jpg | left | img12]: ./final/whiteCarLaneSwitch_hough.jpg
+[@ whiteCarLaneSwitch_final.jpg | right | img13]: ./final/whiteCarLaneSwitch_final.jpg
 * solidYellowLeft
-[@ solidYellowLeft_hough.jpg | left | img14]: ../final/solidYellowLeft_hough.jpg
-[@ solidYellowLeft_final.jpg | right | img15]: ../final/solidYellowLeft_final.jpg
-* solidWhiteCurve	
-[@solidWhiteCurve_hough.jpg | left | img16]: ../final/solidWhiteCurve_hough.jpg	
-[@ solidWhiteCurve_final.jpg	 | right | img17]: ../final/solidWhiteCurve_final.jpg	
-* solidWhiteRight	
-[@ solidWhiteRight_hough.jpg | left | img18]: ../final/solidWhiteRight_hough.jpg
-[@ solidWhiteRight_final.jpg | right | img19]: ../final/solidWhiteRight_final.jpg
+[@ solidYellowLeft_hough.jpg | left | img14]: ./final/solidYellowLeft_hough.jpg
+[@ solidYellowLeft_final.jpg | right | img15]: ./final/solidYellowLeft_final.jpg
+* solidWhiteCurve
+[@solidWhiteCurve_hough.jpg | left | img16]: ./final/solidWhiteCurve_hough.jpg
+[@ solidWhiteCurve_final.jpg | right | img17]: ./final/solidWhiteCurve_final.jpg
+* solidWhiteRight
+[@ solidWhiteRight_hough.jpg | left | img18]: ./final/solidWhiteRight_hough.jpg
+[@ solidWhiteRight_final.jpg | right | img19]: ./final/solidWhiteRight_final.jpg
 * solidYellowCurve
-[@ solidYellowCurve_hough.jpg | left | img20]: ../final/solidYellowCurve_hough.jpg
-[@ solidYellowCurve_final.jpg | right | img21]: ../final/solidYellowCurve_final.jpg
+![@solidYellowCurve_hough.jpg | left | img20](./final/solidYellowCurve_hough.jpg)
+![@solidYellowCurve_final.jpg | right | img21](./final/solidYellowCurve_final.jpg)
 * solidYellowCurve2
-[@ solidYellowCurve2_hough.jpg | right | img22]: ../final/solidYellowCurve2_hough.jpg
-[@ solidYellowCurve2_final.jpg| right | img23]: ../final/solidYellowCurve2_final.jpg
+![@solidYellowCurve2_hough.jpg | right | img22](./final/solidYellowCurve2_hough.jpg)
+![@solidYellowCurve2_final.jpg| right | img23](./final/solidYellowCurve2_final.jpg)
