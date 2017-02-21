@@ -164,30 +164,33 @@ Following improvements needs to be tested and tried :
 ---
 ##Results
 The results of the project are stored in "final" folder. The folder includes the following:
+######result video - extra.mp4
+######result video - white.mp4
+######result video - yellow.mp4
+######result for image solidWhiteRight
 
-1. result video - extra.mp4
+![@solidWhiteRight_hough.jpg | center | img10](./final/solidWhiteRight_hough.jpg)![@ solidWhiteRight_final.jpg | center| img11](./final/solidWhiteRight_final.jpg)
 
-2. result video - white.mp4
+######result for image whiteCarLaneSwitch
 
-3. result video - yellow.mp4
+![@whiteCarLaneSwitch_hough.jpg | center | img12](./final/whiteCarLaneSwitch_hough.jpg)![@ whiteCarLaneSwitch_final.jpg | center | img13](./final/whiteCarLaneSwitch_final.jpg)
 
-4. result for image solidWhiteRight
-![@solidWhiteRight_hough.jpg | left | img10](./final/solidWhiteRight_hough.jpg)![@ solidWhiteRight_final.jpg | right | img11](./final/solidWhiteRight_final.jpg)
+######result for image solidYellowLeft
 
-5. result for image whiteCarLaneSwitch
-![@whiteCarLaneSwitch_hough.jpg | left | img12](./final/whiteCarLaneSwitch_hough.jpg)![@ whiteCarLaneSwitch_final.jpg | right | img13](./final/whiteCarLaneSwitch_final.jpg)
+![@solidYellowLeft_hough.jpg | center | img14](./final/solidYellowLeft_hough.jpg)![@ solidYellowLeft_final.jpg | center| img15](./final/solidYellowLeft_final.jpg)
 
-6. result for image solidYellowLeft
-![@solidYellowLeft_hough.jpg | left | img14](./final/solidYellowLeft_hough.jpg)![@ solidYellowLeft_final.jpg | right | img15](./final/solidYellowLeft_final.jpg)
+######result for images solidWhiteCurve
 
-7. result for images solidWhiteCurve
-![@solidWhiteCurve_hough.jpg | left | img16](./final/solidWhiteCurve_hough.jpg)![@ solidWhiteCurve_final.jpg | right | img17](./final/solidWhiteCurve_final.jpg)
+![@solidWhiteCurve_hough.jpg | center | img16](./final/solidWhiteCurve_hough.jpg)![@ solidWhiteCurve_final.jpg | center| img17](./final/solidWhiteCurve_final.jpg)
 
-8. result for image solidWhiteRight
-![@solidWhiteRight_hough.jpg | left | img18](./final/solidWhiteRight_hough.jpg)![@ solidWhiteRight_final.jpg | right | img19](./final/solidWhiteRight_final.jpg)
+######result for image solidWhiteRight
 
-9. result for image solidYellowCurve
-![@solidYellowCurve_hough.jpg | left | img20](./final/solidYellowCurve_hough.jpg)![@solidYellowCurve_final.jpg | right | img21](./final/solidYellowCurve_final.jpg)
+![@solidWhiteRight_hough.jpg | center | img18](./final/solidWhiteRight_hough.jpg)![@ solidWhiteRight_final.jpg | center| img19](./final/solidWhiteRight_final.jpg)
 
-10. result for image solidYellowCurve2
-![@solidYellowCurve2_hough.jpg | left | img22](./final/solidYellowCurve2_hough.jpg)![@solidYellowCurve2_final.jpg| right | img23](./final/solidYellowCurve2_final.jpg)
+######result for image solidYellowCurve
+
+![@solidYellowCurve_hough.jpg | center | img20](./final/solidYellowCurve_hough.jpg)![@solidYellowCurve_final.jpg | center| img21](./final/solidYellowCurve_final.jpg)
+
+######result for image solidYellowCurve2
+
+![@solidYellowCurve2_hough.jpg | center | img22](./final/solidYellowCurve2_hough.jpg)![@solidYellowCurve2_final.jpg| center | img23](./final/solidYellowCurve2_final.jpg)
