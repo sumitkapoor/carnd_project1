@@ -1,15 +1,17 @@
 #**Finding Lane Lines on the Road** 
----
 
 ##Introduction
 The following document describes the steps required to identify lanes lines on an image or video of a road. The steps are based on self driving nanodegree program conducted by Udacity.
 
 The document first describes the goal of the project, the process that was taken to identify the lanes along with the issues faced and how they were finally resolved. 
 
+----
+
 ##Project Goals
 The goals  of this project are the following:
 * Make a pipeline that finds lane lines on the road : The project involved detecting lanes lines on 5 images and 2 videos. An extra challenge video was also provided along with the project.
 * Reflect on the work in a written report
+
 ---
 
 ##Reflection
@@ -144,8 +146,6 @@ Once the lines have been drawn, add to the copy of original image to get results
 [@ Hough Lines on original image  | left | img08]: ./examples/solidWhiteCurve_hough.jpg
 [@ Extrapolate Hough Lines  on original image | right | img09]: ./examples/solidWhiteCurve_final.jpg
 
----
-
 
 ###2. Potential shortcomings 
 With the current approach the following shortcomings are observed :
@@ -156,7 +156,6 @@ With the current approach the following shortcomings are observed :
 * Turns / curves on road detection will not work well.
 * zebra crossing and speed bump marking may confuse the pipeline. 
 
----
 ###3. Suggest possible improvements 
 Following improvements needs to be tested and tried :
 * Need to remove shadows. Was exploring BackgroundSubtractor (cv2.createBackgroundSubtractorMOG2()) for the same. I could be completely wrong here.
@@ -170,23 +169,23 @@ The results of the project are stored in "final" folder. The folder includes the
 * white.mp4
 * yellow.mp4
 * solidWhiteRight	
-[@ solidWhiteRight_hough.jpg | left | img10]: ./final/solidWhiteRight_hough.jpg
-[@ solidWhiteRight_final.jpg | right | img11]: ./final/solidWhiteRight_final.jpg
+[@ solidWhiteRight_hough.jpg | left | img10]: ../final/solidWhiteRight_hough.jpg
+[@ solidWhiteRight_final.jpg | right | img11]: ../final/solidWhiteRight_final.jpg
 * whiteCarLaneSwitch
-[@ whiteCarLaneSwitch_hough.jpg | left | img12]: ./final/whiteCarLaneSwitch_hough.jpg
-[@ whiteCarLaneSwitch_final.jpg | right | img13]: ./final/whiteCarLaneSwitch_final.jpg
+[@ whiteCarLaneSwitch_hough.jpg | left | img12]: ../final/whiteCarLaneSwitch_hough.jpg
+[@ whiteCarLaneSwitch_final.jpg | right | img13]: ../final/whiteCarLaneSwitch_final.jpg
 * solidYellowLeft
-[@ solidYellowLeft_hough.jpg | left | img14]: ./final/solidYellowLeft_hough.jpg
-[@ solidYellowLeft_final.jpg | right | img15]: ./final/solidYellowLeft_final.jpg
+[@ solidYellowLeft_hough.jpg | left | img14]: ../final/solidYellowLeft_hough.jpg
+[@ solidYellowLeft_final.jpg | right | img15]: ../final/solidYellowLeft_final.jpg
 * solidWhiteCurve	
-[@solidWhiteCurve_hough.jpg | left | img16]: ./final/solidWhiteCurve_hough.jpg	
-[@ solidWhiteCurve_final.jpg	 | right | img17]: ./final/solidWhiteCurve_final.jpg	
+[@solidWhiteCurve_hough.jpg | left | img16]: ../final/solidWhiteCurve_hough.jpg	
+[@ solidWhiteCurve_final.jpg	 | right | img17]: ../final/solidWhiteCurve_final.jpg	
 * solidWhiteRight	
-[@ solidWhiteRight_hough.jpg | left | img18]: ./final/solidWhiteRight_hough.jpg
-[@ solidWhiteRight_final.jpg | right | img19]: ./final/solidWhiteRight_final.jpg
+[@ solidWhiteRight_hough.jpg | left | img18]: ../final/solidWhiteRight_hough.jpg
+[@ solidWhiteRight_final.jpg | right | img19]: ../final/solidWhiteRight_final.jpg
 * solidYellowCurve
-[@ solidYellowCurve_hough.jpg | left | img20]: ./final/solidYellowCurve_hough.jpg
-[@ solidYellowCurve_final.jpg | right | img21]: ./final/solidYellowCurve_final.jpg
+[@ solidYellowCurve_hough.jpg | left | img20]: ../final/solidYellowCurve_hough.jpg
+[@ solidYellowCurve_final.jpg | right | img21]: ../final/solidYellowCurve_final.jpg
 * solidYellowCurve2
-[@ solidYellowCurve2_hough.jpg | right | img22]: ./final/solidYellowCurve2_hough.jpg
-[@ solidYellowCurve2_final.jpg| right | img23]: ./final/solidYellowCurve2_final.jpg
+[@ solidYellowCurve2_hough.jpg | right | img22]: ../final/solidYellowCurve2_hough.jpg
+[@ solidYellowCurve2_final.jpg| right | img23]: ../final/solidYellowCurve2_final.jpg
