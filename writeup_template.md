@@ -1,9 +1,9 @@
 #**Finding Lane Lines on the Road** 
 
 ##Introduction
-The following document describes the steps required to identify lanes lines on an image or video of a road. The steps are based on self driving nanodegree program conducted by Udacity.
+The following document describes the steps required to identify lane lines on an image or video of a road. The steps are based on self driving nanodegree program conducted by Udacity.
 
-The document first describes the goal of the project, the process that was taken to identify the lanes along with the issues faced and how they were finally resolved. 
+The document first describes the goal of the project, the process that was taken to identify the lanes along with the issues faced and how they were finally resolved. The document continues to explore potential shortcoming along with suggested improvement in brief and ends with the results for the current project.
 
 ----
 
@@ -17,10 +17,10 @@ The goals  of this project are the following:
 ##Reflection
 
 ###1. Solution
-Once the image is read it is passed to a pipeline to detect lane lines consisting pf the following series of steps :
+Once the image is read it is passed to a pipeline to detect lane lines consisting of the following series of steps :
 
 * **Step 1 : Convert to Gray Scale**
-The image provided is usually a colored image. Converting it into grayscale using openCV's function *cvtColor(...)* will convert it into a grey 8-bit grey image. 
+The image provided is usually a colored image. Converting it into grayscale using openCV's function *cvtColor(...)* will convert it into a 8-bit grey image. 
 
 ```
 #use RGB2GRAY is image is read with mpimg.imread()
@@ -32,7 +32,7 @@ The image will look like the following :
 ![@Grey Scale | center | img01](./examples/gray_scale.png)
 
 * **Step 2 : Apply Gaussian Blur**
-Going forward we need to find the edges of the lanes within the image. As edge detection is susceptible to noise in the image, we would need to remove the noise by applying Gaussian filter.  To do so, we use *GaussianBlur(...)* function from openCV. Pass the 8-bit output from the previous step to the function.
+Going forward we need to find the edges of the lanes within the image. As edge detection is susceptible to noise in the image, we would need to remove the noise by applying Gaussian filter.  To do so, we use *GaussianBlur(...)* function from openCV. Pass the 8-bit output from the previous step to the function to filter out the noise.
 ```
 cv2.GaussianBlur(img, (kernel_size, kernel_size), 0)
 ```
@@ -50,7 +50,7 @@ The image now looks like the following:
 
 * **Step 4 : Apply region mask**
 The next important step is to select the region of interest. This is done be creating a region which encompasses the lanes. We then mask out the image from previous step resulting in the selection of region consisting of left lane, right lane and area in between. 
-To begin with we need to define the vertices of the image.  Take a ration to select the upper left and right points.
+To begin with we need to define the vertices of the image.  Take a ratio to select the upper left and right points.
  
 ```
  #Golden ratio for a rectangle is 8/ 5 (width/ height)
@@ -66,7 +66,7 @@ The image will now look like the following:
 ![@Region masked  | center | img04](./examples/region_masked.png)
 
 * **Step 5 : Detect lines using Hough Transform**
-Now the we have detected the edges and have the region of interest, we will go ahead and detect the lane line.  We use probabilistic Hough Line Transform which is a efficient implementation of the Hough Line Transform. The output is the extremes of the detected lines (x{0}, y{0}, x{1}, y{1}).
+Now that we have detected the edges and have the region of interest, we will go ahead and detect the lane line.  We use probabilistic Hough Line Transform which is an efficient implementation of the Hough Line Transform. The output is the extremes of the detected lines (x{0}, y{0}, x{1}, y{1}).
 Line variables
 For Hough Transforms, we will express lines in the Polar system. And the equation of line can be written as:
 										
@@ -81,7 +81,7 @@ cv2.HoughLinesP(img, rho, theta, threshold, np.array([]), minLineLength=min_line
 ```
 
 * **Step 6 : Draw Hough Lines**
-The lines which we got after applying probabilistic hough line transform will now be drawn. Before drawing the lines detect the slope of the lines to differentiate between left lane and right lane.
+The lines which we got after applying probabilistic hough line transform will now be drawn. Before drawing the lines detect the slope of the lines to differentiate between left lane and right lane and then average out the slope to draw the line.
 
 ```
 slopes = np.apply_along_axis(lambda line: (line[3] - line[1]) / (line[2] - line[0]), 2, lines)
@@ -137,28 +137,28 @@ cv2.line(img, (bottom_right_point[0], bottom_right_point[1]), (top_right_point[0
 The resulting image will look like the following:
 ![@Extrapolate Hough Lines  | center | img06](./examples/extrapolate_hough_lines.png)
 
-You can apply slope thresholds to filter out the lines which do not follow the same path as the lanes. Not applying the slope thresholds can otherwise result in bugs :
+Apply slope thresholds to filter out the lines which do not follow the same path as the lanes (to make it robust). Not applying the slope thresholds can otherwise result in bugs :
 
 ![@Incorrect slopes  | center | img07](./issues/bug.png)
 
-Once the lines have been drawn, add to the copy of original image to get results like:
+Once the lines have been drawn, apply to the copy of original image to get results like:
 
 ![@Hough Lines on original image  | left | img08](./examples/solidWhiteCurve_hough.jpg)![@Extrapolate Hough Lines  on original image | right | img09](./examples/solidWhiteCurve_final.jpg)
 
 
 ###2. Potential shortcomings 
 With the current approach the following shortcomings are observed :
-* The current approach assumes the road to be free of any shadows : This was something that was observed while working on *challenge.mp4* video. The shadows results in a darker lane which may probably match with the road. The thresholds for canny have to be reduced and to avoid noises Gaussian kernel value and along with Hough Transform parameters needs to be adjusted.
+* The current approach assumes the road to be free of any shadows : This was something that was observed while working on *challenge.mp4* video. The shadows results in a darker lane which may match with the road color. The thresholds for canny have to be reduced and to avoid noises Gaussian kernel value and along with Hough Transform parameters had to be adjusted.
 * Issues when the lane color and road colors are almost same. Again this was observed while working on *challenge.mp4* around the cement patch.
 * May not work in bad weather. 
 * Currently it assumes averaging the lanes lines based on the certain threshold history points which may change with the speed of the vehicle and the terrain.
 * Turns / curves on road detection will not work well.
-* zebra crossing and speed bump marking may confuse the pipeline. 
+* zebra crossing and speed bump marking, etc.., may confuse the pipeline. 
 
 ###3. Suggest possible improvements 
 Following improvements needs to be tested and tried :
 * Need to remove shadows. Was exploring BackgroundSubtractor (cv2.createBackgroundSubtractorMOG2()) for the same. I could be completely wrong here.
-* There has to a feedback mechanism to adjust the thresholds for the frame depending the  weather, road, etc..
+* There has to be a feedback mechanism to adjust the thresholds for canny, hough lines and slopes per frame depending on the  weather, road, etc..
 * Turns and curve detection, may require map integration.
 
 ---
